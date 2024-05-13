@@ -31,7 +31,7 @@ export default function PageHeader({
               </span>
           </h1>
           <p className="text-gray-800 dark:text-gray-400 text-3xl pt-3">in</p>
-          <p className="font-inter-tight text-5xl md:text-[85px] font-bold text-gray-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-200 dark:to-gray-200 py-4">
+          <p className="font-inter-tight text-[85px] font-bold text-gray-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-200 dark:to-gray-200 py-4">
             {children}
           </p>
         </div>
