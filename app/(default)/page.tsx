@@ -51,36 +51,39 @@ export default function Home() {
               {launch && count}
             </PageHeader>
           ) : (
-            <div className={`max-w-3xl mx-auto grid grid-cols-3 gap-10 place-items-center`}>
-              <Image
-                src={'/images/Plateau.png'}
-                alt='microsoft'
-                width={100}
-                height={100}
-                className="object-contain w-full"
-                />
+            <section className="max-w-3xl mx-auto flex flex-col gap-20 items-center">
+              <Image src={'/images/pixels.jpg'} alt='microsoft' width={100} height={100} className="object-contain w-full"/>
+              <div className={`grid grid-cols-3 gap-10 place-items-center`}>
                 <Image
-                src={'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31'}
-                alt='microsoft'
-                width={100}
-                height={100}
-                className="object-contain w-full"
+                  src={'/images/Plateau.png'}
+                  alt='microsoft'
+                  width={100}
+                  height={100}
+                  className="object-contain w-full"
+                  />
+                  <Image
+                  src={'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31'}
+                  alt='microsoft'
+                  width={100}
+                  height={100}
+                  className="object-contain w-full"
 
-                />
-                <Image
-                src={'/images/zeustek.jpg'}
-                alt='microsoft'
-                width={100}
-                height={100}
-                className="object-contain w-full"
+                  />
+                  <Image
+                  src={'/images/zeustek.jpg'}
+                  alt='microsoft'
+                  width={100}
+                  height={100}
+                  className="object-contain w-full"
 
-                />
-            </div>
+                  />
+              </div>
+            </section>
           )}
           <div className="relative flex items-center justify-center">
             {!launch && (
               <button
-                className="btn dark:bg-[#567CE0] bg-[#111827] text-white text-3xl hover:bg-blue-700/35 font-bold py-28 px-20 rounded-full"
+                className="btn dark:bg-[#567CE0] bg-[#111827] text-white text-3xl dark:hover:bg-blue-700/15 hover:bg-blue-700/35 font-bold py-28 px-20 rounded-full shadow-[#333] shadow-lg"
                 onClick={() => {
                   setLaunch(true);
                   countdown(10);
