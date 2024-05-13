@@ -52,7 +52,7 @@ export default function Home() {
             </PageHeader>
           ) : (
             <section className="max-w-3xl mx-auto flex flex-col gap-20 items-center">
-              <Image src={'/images/pixels.jpg'} alt='microsoft' width={100} height={100} className="object-contain w-full"/>
+              <Image src={'/images/pixels.png'} alt='microsoft' width={100} height={100} className="object-contain w-full h-[450px]"/>
               <div className={`grid grid-cols-3 gap-10 place-items-center`}>
                 <Image
                   src={'/images/Plateau.png'}
