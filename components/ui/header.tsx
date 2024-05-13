@@ -17,7 +17,7 @@ export default function Header() {
             <div className="flex">
               {/* Logo */}
               <Link href="/">
-                <Image src="https://app.zeustek.ng/upload/images/logo/oxi0-sticky-2x-jummaipro-logo.png" alt="logo" width={50} height={50}/>
+                <Image src="https://app.zeustek.ng/upload/images/logo/oxi0-sticky-2x-jummaipro-logo.png" alt="logo" width={100} height={100}/>
               </Link>
             </div>
             {/* Navigation links */}

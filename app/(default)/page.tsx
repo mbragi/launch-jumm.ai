@@ -1,44 +1,53 @@
-export const metadata = {
-  title: "Launch Jummai",
-  description: "Page description",
-};
-
+'use client';
 import PageHeader from "@/components/page-header";
 import SubscribeForm from "@/components/subscribe-form";
-import Confetti from "react-confetti";
-import useWindowSize from 'react-use/lib/useWindowSize'
-
+import { useEffect, useState } from "react";
+import confetti from 'canvas-confetti';
 export default function Home() {
+  const [count, setCount] = useState(10);
+  const [display, setDisplay] = useState(false);
   function countdown(n: number): void {
     let timer = setInterval(() => {
-        console.log(n);
+        setCount(n);
         n--;
-        if (n === 0) {
+        if (n < 0) {
             console.log("Go!");
             clearInterval(timer);
         }
-    }, 1000);
+    }, 1000); 
 }
 
-  // const { width, height } = useWindowSize()
+useEffect(() => {
+  if (count === 0) {
+    confetti({
+      particleCount: 180,
+      spread: 180,
+    });
+  }
+}, [count])
+
+
   return (
     <section>
-      {/* <Confetti
-         width={width}
-          height={height}
-          /> */}
       <div className="pt-32 pb-12 md:pt-44 md:pb-20">
         <div className="px-4 sm:px-6">
           <PageHeader
             className="mb-12"
-            title="The software that sparks your imagination"
-            description="Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever."
+            title=""
+            description={`Launching Jumm.ai`}
           >
-            Waitlist v1 <span className="text-gray-300 mx-1">·</span> Coming
-            Soon
+            {display && count}
           </PageHeader>
 
-          <SubscribeForm />
+          <div className="relative flex items-center justify-center">
+           {!display &&  <button className="btn dark:bg-[#567CE0] bg-[#111827] text-white text-3xl hover:bg-blue-700/35 font-bold py-28 px-20 rounded-full" onClick={() => {
+              setDisplay(true);
+              countdown(10);
+            }}>
+              Launch
+            </button>}
+          </div>
+          {/* <SubscribeForm /> */}
         </div>
       </div>
     </section>

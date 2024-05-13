@@ -18,7 +18,7 @@ export default function DefaultLayout({
 
       <main className="grow">{children}</main>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
